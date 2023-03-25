@@ -179,7 +179,7 @@ git log --all --graph --oneline
 1. Переключимось на гілку master:
 git checkout master
 2. Тепер потрібно об'єднати всі 3 коміта гілки b в один коміт на вітці master:
-git merge h  
+git merge --squash b 
 3. Комітимо зміну:
 git commit -m "merge --squash b"
 4. Тепер потрібно видалити вітку b:
