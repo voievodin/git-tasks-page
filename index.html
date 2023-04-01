@@ -176,9 +176,12 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+git branch rollback_commit_3
+git checkout rollback_commit_3
+git revert c255fc8
+git checkout master
+git merge rollback_commit_3
+git branch -d rollback_commit_3
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
