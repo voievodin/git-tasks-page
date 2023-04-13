@@ -45,11 +45,11 @@ git log --all --graph --oneline
 * 4d6aa0b (HEAD -> master, origin/master) Add f9
 | * 5163217 (origin/a, a) Add f8
 | * cf63d02 Add f7
-|/  
+|/
 | * 75d54af (origin/b, b) Add f6
 | * e999946 Add f5
 | * 8d17094 Add f4
-|/  
+|/
 * c255fc8 Add f3
 * 9b5385c Add f2
 * 5c29cc4 Add f1
@@ -91,7 +91,7 @@ git log --all --graph --oneline
                     change the second commit to contain a new file named cf2.txt with arbitrary content. Ensure that only 2 commits remain
                     in the branch <code>a</code> (comparing to the <code>master</code> branch). In linux (or gitbash in windows) you can use
                     <code>touch</code> command to create a file, for example, <code>touch cf1.txt</code>. In case interactive operation
-                    is used use <i>[action]</i> square brackets to point what should be done in the interactive mode. For example, in 
+                    is used use <i>[action]</i> square brackets to point what should be done in the interactive mode. For example, in
                     order to accept suggested interactive rebase changes use <i>[accept]</i> comment, like <code>rebase -i HASH // [accept]</code>.
                     <p>
                         <a class="btn btn-secondary btn-sm"
@@ -106,12 +106,12 @@ git log --all --graph --oneline
                     <div class="collapse" id="t2-collapse" style="margin-bottom: 10px">
                         <div class="card card-body">
                             You can use <code>git commit --fixup HASH</code> and <code>git rebase -i --autosquash HASH</code> commands
-                            to 'tweak' existing commits in a convenient way. 
+                            to 'tweak' existing commits in a convenient way.
                         </div>
                     </div>
                 </li>
                 <li>
-                    Roll back the change that the commit #3 introduced. Do that in the branch named <code>rollback_commit_3</code>. 
+                    Roll back the change that the commit #3 introduced. Do that in the branch named <code>rollback_commit_3</code>.
                     Merge the change to the <code>master</code> branch. Remove the newly created branch.
 
                     <p>
@@ -126,14 +126,14 @@ git log --all --graph --oneline
                     </p>
                     <div class="collapse" id="t3-collapse" style="margin-bottom: 10px">
                         <div class="card card-body">
-                            <code>git revert HASH</code> can be used to reverse the change applied by the commit.  
+                            <code>git revert HASH</code> can be used to reverse the change applied by the commit.
                         </div>
                     </div>
                 </li>
                 <li>
                     Move the changes in commits 7 and 8 to the branch <code>b</code>, as result the branch <code>b</code> should
                     contain 2 more commits (comparing to the <code>master</code> branch). Merge  the branch <code>b</code> to the
-                    <code>master</code> branch. Remove both <code>a</code> and <code>b</code> branches. 
+                    <code>master</code> branch. Remove both <code>a</code> and <code>b</code> branches.
 
                     <p>
                         <a class="btn btn-secondary btn-sm"
@@ -152,7 +152,7 @@ git log --all --graph --oneline
                     </div>
                 </li>
                 <li>
-                    Create a new branch based on commit 3. Add a new file named cf1.txt. Commit the file. Change the base 
+                    Create a new branch based on commit 3. Add a new file named cf1.txt. Commit the file. Change the base
                     commit of the branch from 3 to 9. In linux (or gitbash in windows) you can use
                     <code>touch</code> command to create a file, for example, <code>touch cf1.txt</code>.
                     <p>
@@ -176,9 +176,15 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+git checkout -b 7  - switch to 7th commits
+touch cf1.txt
+git add .
+git commit --amend
+
+git checkout -b 8  - switch to 8th commits
+touch cf2.txt
+git add .
+git commit --amend
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
@@ -198,9 +204,9 @@ git status (remove me)
 <script>
     document.head.appendChild(
         Object.assign(
-            document.createElement("link"), 
+            document.createElement("link"),
             {
-                rel: "icon", 
+                rel: "icon",
                 href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>"
             }
         )
