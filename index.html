@@ -176,9 +176,16 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+1. Переключимось на гілку b:
+git checkout b
+2. Тепер потрібно об'єднати всі 3 коміта гілки b в один коміт на вітці master:
+git reset -i HEAD~3 
+3. Переключаємлсь на гілку master:
+git checkout master 
+4. Тепер потрібно об'єднати master з b:
+git merge b
+5. Видаляємо гілку b
+git branch -D b
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
