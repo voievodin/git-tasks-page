@@ -176,15 +176,11 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git checkout -b 7  - switch to 7th commits
-touch cf1.txt
-git add .
-git commit --amend
-
-git checkout -b 8  - switch to 8th commits
-touch cf2.txt
-git add .
-git commit --amend
+git checkout b
+git cherry-pick 7
+git cherry-pick 8
+git checkout master
+git merge master b
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
