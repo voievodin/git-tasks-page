@@ -176,9 +176,12 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+git checkout b
+git rest --soft HEAD~3
+git commit --amend -m
+git checkout master
+git merge b
+git branch -D b
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
