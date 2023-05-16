@@ -176,9 +176,20 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+    My task is - 1
+
+git checkout b
+git rebase -i b~3
+
+// Замінити pick в 75d54af та e999946 на squash
+// Виходимо з текстового редактору shift + : + wq
+//При винекненні помилки продовжити та перезаписати за допомогою R.
+// Дати назву комміту та натиснути Enter
+
+git checkout master
+git merge {ввести кеш щойно створенного коміта}
+git branch -d b
+
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
