@@ -1,1 +1,210 @@
-instructions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Git tasks!</title>
+    <!-- Bootstrap 5 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">💻 Git tasks!</a>
+    </div>
+</nav>
+
+<div class="container-fluid" style="padding: 20px 40px">
+    <div class="row">
+
+        <!-- left column -->
+        <div class="col">
+            <h1>Given</h1>
+            <img src="graph.png"/>
+            <p>The exact commits graph can be found in the repository <a href="">here</a>.</p>
+            <p>The actual commit hashes (short) associated with the numbers in the graph. Use these hashes in your instructions:</p>
+            <ol>
+                <li>5c29cc</li>
+                <li>9b5385</li>
+                <li>c255fc</li>
+                <li>8d1709</li>
+                <li>e99994</li>
+                <li>75d54a</li>
+                <li>cf63d0</li>
+                <li>516321</li>
+                <li>4d6aa0</li>
+            </ol>
+
+            <pre>
+                <code>
+git log --all --graph --oneline
+
+* 4d6aa0b (HEAD -> master, origin/master) Add f9
+| * 5163217 (origin/a, a) Add f8
+| * cf63d02 Add f7
+|/  
+| * 75d54af (origin/b, b) Add f6
+| * e999946 Add f5
+| * 8d17094 Add f4
+|/  
+* c255fc8 Add f3
+* 9b5385c Add f2
+* 5c29cc4 Add f1
+                </code>
+            </pre>
+        </div>
+
+        <!-- right column -->
+        <div class="col">
+            <h1>Tasks</h1>
+            <p>According to your number in the group list you need to write an instruction in a form of set of
+                commands that solves the corresponding problem (the one assigned to you) in the list below. </p>
+            <ol>
+                <li>
+                    The branch <code>b</code> contains 3 commits (comparing to the <code>master</code> branch).
+                    Write a set of commands that will make a single commit out of those 3 and merge the <code>b</code> branch to the
+                    <code>master</code> branch. Remove the <code>b</code> branch after merge is done.
+
+                    <p>
+                        <a class="btn btn-secondary btn-sm"
+                           data-bs-toggle="collapse"
+                           href="#t1-collapse"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="t1-collapse">
+                            Hint
+                        </a>
+                    </p>
+                    <div class="collapse" id="t1-collapse" style="margin-bottom: 10px">
+                        <div class="card card-body">
+                            There are multiple ways to achieve it. A simple one would be to use soft reset and commit with --amend.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    The branch <code>a</code> contains 2 commits (comparing to the <code>master</code> branch).
+                    Write a set of commands that will do the following: change the first commit to contain a new file named cf1.txt with
+                    arbitrary content;
+                    change the second commit to contain a new file named cf2.txt with arbitrary content. Ensure that only 2 commits remain
+                    in the branch <code>a</code> (comparing to the <code>master</code> branch). In linux (or gitbash in windows) you can use
+                    <code>touch</code> command to create a file, for example, <code>touch cf1.txt</code>. In case interactive operation
+                    is used use <i>[action]</i> square brackets to point what should be done in the interactive mode. For example, in 
+                    order to accept suggested interactive rebase changes use <i>[accept]</i> comment, like <code>rebase -i HASH // [accept]</code>.
+                    <p>
+                        <a class="btn btn-secondary btn-sm"
+                           data-bs-toggle="collapse"
+                           href="#t2-collapse"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="t2-collapse">
+                            Hint
+                        </a>
+                    </p>
+                    <div class="collapse" id="t2-collapse" style="margin-bottom: 10px">
+                        <div class="card card-body">
+                            You can use <code>git commit --fixup HASH</code> and <code>git rebase -i --autosquash HASH</code> commands
+                            to 'tweak' existing commits in a convenient way. 
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Roll back the change that the commit #3 introduced. Do that in the branch named <code>rollback_commit_3</code>. 
+                    Merge the change to the <code>master</code> branch. Remove the newly created branch.
+
+                    <p>
+                        <a class="btn btn-secondary btn-sm"
+                           data-bs-toggle="collapse"
+                           href="#t3-collapse"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="t3-collapse">
+                            Hint
+                        </a>
+                    </p>
+                    <div class="collapse" id="t3-collapse" style="margin-bottom: 10px">
+                        <div class="card card-body">
+                            <code>git revert HASH</code> can be used to reverse the change applied by the commit.  
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Move the changes in commits 7 and 8 to the branch <code>b</code>, as result the branch <code>b</code> should
+                    contain 2 more commits (comparing to the <code>master</code> branch). Merge  the branch <code>b</code> to the
+                    <code>master</code> branch. Remove both <code>a</code> and <code>b</code> branches. 
+
+                    <p>
+                        <a class="btn btn-secondary btn-sm"
+                           data-bs-toggle="collapse"
+                           href="#t4-collapse"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="t4-collapse">
+                            Hint
+                        </a>
+                    </p>
+                    <div class="collapse" id="t4-collapse" style="margin-bottom: 10px">
+                        <div class="card card-body">
+                            The simplest way to achieve it would be using the <code>git cherry-pick HASH</code> command
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Create a new branch based on commit 3. Add a new file named cf1.txt. Commit the file. Change the base 
+                    commit of the branch from 3 to 9. In linux (or gitbash in windows) you can use
+                    <code>touch</code> command to create a file, for example, <code>touch cf1.txt</code>.
+                    <p>
+                        <a class="btn btn-secondary btn-sm"
+                           data-bs-toggle="collapse"
+                           href="#t5-collapse"
+                           role="button"
+                           aria-expanded="false"
+                           aria-controls="t5-collapse">
+                            Hint
+                        </a>
+                    </p>
+                    <div class="collapse" id="t5-collapse" style="margin-bottom: 10px">
+                        <div class="card card-body">
+                            <code>git rebase HASH</code> will do the trick
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            <hr>
+            <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
+            <pre style="border: 1px solid red; padding: 10px">
+<code>
+git checkout master
+git merge --squash b
+git branch -d b
+</code>
+</pre>
+            <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap 5 js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+</script>
+<!-- Emoji as favicon -->
+<script>
+    document.head.appendChild(
+        Object.assign(
+            document.createElement("link"), 
+            {
+                rel: "icon", 
+                href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>"
+            }
+        )
+    )
+</script>
+</body>
+</html>
