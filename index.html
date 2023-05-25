@@ -176,9 +176,18 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+git checkout a
+git rebase -i master
+touch cf1.txt
+git add cf1.txt
+git commit --amend
+git rebase --continue
+touch cf2.txt
+git add cf2.txt
+git commit --amend
+git rebase --continue
+git push origin --delete a
+git push origin a -f
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
