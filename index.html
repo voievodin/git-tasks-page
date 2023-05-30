@@ -176,9 +176,16 @@ git log --all --graph --oneline
             <p>The set of instructions you need to write goes here 👇👇👇👇👇👇👇👇👇</p>
             <pre style="border: 1px solid red; padding: 10px">
 <code>
-git status (remove me)
-git status (remove me)
-git status (remove me)
+    <!--Тут нічого цікавого немає, тільки код =З-->
+    touch cf1.txt (або інший спосіб створити файл та заповнити в нього інформацію)
+    git add cf1.txt
+    git commit --fixup cf63d0
+    git rebase -i --autosquash c255fc
+
+    touch cf2.txt (або інший спосіб створити файл та заповнити в нього інформацію)
+    git add cf2.txt
+    git commit --fixup 516321
+    git rebase -i --autosquash c255fc
 </code>
 </pre>
             <p>The set of instructions you need to write goes here ☝️☝️☝️☝️☝️☝️☝️☝️☝️</p>
